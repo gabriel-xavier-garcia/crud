@@ -1,6 +1,10 @@
 package com.devgarcia.Crud.dto;
 
 import com.devgarcia.Crud.entities.Client;
+import jakarta.annotation.Nullable;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
+import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDate;
 
@@ -8,12 +12,15 @@ public class ClientDTO {
 
     private Long id;
 
+    @NotBlank(message = "Field name cannot be empty")
     private String name;
 
+    @CPF(message = "Invalid CPF, must be 11 characters and valid")
     private String cpf;
 
     private Double income;
 
+    @PastOrPresent(message = "Date must be past or present")
     private LocalDate birthDate;
 
     private Integer children;
