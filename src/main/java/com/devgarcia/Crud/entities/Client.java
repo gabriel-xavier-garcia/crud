@@ -22,6 +22,9 @@ public class Client {
 
     private Integer children;
 
+    public Client() {
+    }
+
     public Client(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
         this.id = id;
         this.name = name;
